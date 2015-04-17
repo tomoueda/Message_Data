@@ -5,7 +5,9 @@ def main():
     logan_word_count = 0
     tomo_message_count = 0
     logan_message_count = 0
+    total = 0
     for line in fileinput.input():
+        total += 1
         tokenized_line = line.split()
         if tokenized_line:
             if tokenized_line[len(tokenized_line) - 1] == '0':
@@ -18,6 +20,8 @@ def main():
     print 'logan_word_count messaging', logan_word_count
     print 'tomo_message count', tomo_message_count
     print 'logan_message count', logan_message_count
+    print 'tomo_word_per_message', float(tomo_word_count) / tomo_message_count
+    print 'logan_word_per_message', float(logan_word_count) / logan_message_count
 
 if __name__ == '__main__':
     main()
